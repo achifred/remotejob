@@ -1,11 +1,11 @@
 let  fetch = require('node-fetch')
 const DbConnector = require('../../api/config/connector')
 
-let redis = require('redis')
-const client = redis.createClient()
-const{promisify} = require('util')
+//let redis = require('redis')
+//const client = redis.createClient()
+//const{promisify} = require('util')
 
-const setAsync = promisify(client.set).bind(client)
+//const setAsync = promisify(client.set).bind(client)
 const con = new DbConnector()
 const baseUrl = 'https://jobs.github.com/positions.json'
 
