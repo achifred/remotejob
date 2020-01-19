@@ -35,19 +35,23 @@ let fetchGithub =async ()=>{
         })
         //console.log(remoteJobs)
         remoteJobs.forEach(async item => {
-            const result =  await con.Query(sql, 
-                [
-                    item.id, 
-                    item.type, 
-                    item.url, 
-                    item.company,
-                    item.company_url,
-                    item.location,
-                    item.title,
-                    item.description,
-                    item.created_at,
-                    item.company_logo
-                ])
+            try {
+                const result =  await con.Query(sql, 
+                    [
+                        item.id, 
+                        item.type, 
+                        item.url, 
+                        item.company,
+                        item.company_url,
+                        item.location,
+                        item.title,
+                        item.description,
+                        item.created_at,
+                        item.company_logo
+                    ])
+            } catch (error) {
+                console.log(error.message)
+            }
                 //console.log(result)
             
         });
