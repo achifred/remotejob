@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "12.13.x"
+  },
   "scripts": {
-    "dev": "nodemon ./api/index.js ",
-    "build": "node ./worker/index.js",
-    "start": "node ./api/index.js && node ./worker/index.js"
+    "start": "node ./api/index.js",
+    "dev": "nodemon ./api/index.js "
+    
+   
   },
   "keywords": [],
   "author": "",
