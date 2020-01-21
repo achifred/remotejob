@@ -1,9 +1,11 @@
 const express = require('express')
-
+const bodyParser = require('body-parser')
 const app = express()
 
 const githubjobroutes = require('./route/githubjob')
-
+const devjobroutes = require('./route/devjob')
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header(
@@ -18,5 +20,7 @@ app.use((req, res, next) => {
   });
 
   app.use('/jobs',githubjobroutes)
+  app.use('/devjob',devjobroutes)
+
 
   module.exports={app}
