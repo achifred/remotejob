@@ -4,6 +4,7 @@ const app = express()
 
 const githubjobroutes = require('./route/githubjob')
 const devjobroutes = require('./route/devjob')
+const userroutes = require('./route/users')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use((req, res, next) => {
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
 
   app.use('/jobs',githubjobroutes)
   app.use('/devjob',devjobroutes)
+  app.use('/users', userroutes)
 
 
   module.exports={app}
