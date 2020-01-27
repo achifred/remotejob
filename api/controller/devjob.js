@@ -12,10 +12,15 @@ const addJob = async (req, res) => {
 			type,
 			description,
 			salary,
+			techstack,
+			apply,
+			deadline,
+			level,
 			id
 		} = req.body;
 		// console.log(req.body)
-		const sql = "SELECT * FROM dev.add_job($1,$2,$3,$4,$5,$6,$7,$8)";
+		const sql =
+			"SELECT * FROM dev.add_job($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)";
 		const result = await con.Query(sql, [
 			title,
 			company,
@@ -24,7 +29,12 @@ const addJob = async (req, res) => {
 			type,
 			description,
 			salary,
-			id
+
+			id,
+			techstack,
+			apply,
+			deadline,
+			level
 		]);
 		res.send({ message: "success" }).status(200);
 	} catch (error) {
@@ -72,10 +82,15 @@ const updateJob = async (req, res) => {
 			type,
 			description,
 			salary,
-			id
+			id,
+			techstack,
+			apply,
+			deadline,
+			level
 		} = req.body;
 		console.log(req.body);
-		const sql = "SELECT * FROM dev.update_job($1,$2,$3,$4,$5,$6,$7,$8)";
+		const sql =
+			"SELECT * FROM dev.update_job($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12)";
 		const result = await con.Query(sql, [
 			id,
 			title,
@@ -84,10 +99,14 @@ const updateJob = async (req, res) => {
 			location,
 			type,
 			description,
-			salary
+			salary,
+			techstack,
+			apply,
+			deadline,
+			level
 		]);
 
-		//console.log(result.rows);
+		console.log(result.rows);
 
 		res.send({ message: "success" });
 	} catch (error) {
