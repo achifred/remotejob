@@ -1,1 +1,12 @@
 PORT = PORT NUMBER ON WHICH EXPRESS SERVER RUNS
+DB_NAME = database name
+DB_HOST = database host name
+DB_PASS = database password
+DB_USER = database username
+DB_PORT = database port number
+DB_POOLMIN = minimum number of connections
+DB_POOLMAX = maximum number of connections
+DB_IDLETIMEOUT = 30000
+DB_CONNTIMEOUT = 30000
+
+JWT_KEY = secretkey
